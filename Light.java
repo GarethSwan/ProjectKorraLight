@@ -18,8 +18,7 @@ public class Light extends LightAbility{
 	}
 
 	public long getCooldown() {
-		// TODO Auto-generated method stub
-		return 100;
+		return 100 * 1000; //The cooldown is in milliseconds. So this changes it to 100 seconds instead of 0.1 seconds.
 	}
 
 	public Location getLocation() {
