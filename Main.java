@@ -11,7 +11,8 @@ import com.projectkorra.projectkorra.ability.CoreAbility;
 import com.projectkorra.projectkorra.configuration.ConfigManager;
 
 public class Main extends JavaPlugin{
-	
+
+	public static Element Light;
 		public void onEnable() {
 		
 		new Element("Light", ElementType.BENDING, this);
