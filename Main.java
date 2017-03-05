@@ -1,3 +1,6 @@
+// ProjectKorra Light is an addition to add new abilities and a new Element to the game! I do not claim ownership of ProjectKorra Core or any other parts
+// ProjectKorra Light was created by Gareth_Swan
+
 package com.Swan.Korra.PKLight;
 
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,18 +18,19 @@ public class Main extends JavaPlugin{
 	public static Element Light;
 		public void onEnable() {
 		
-		new Element("Light", ElementType.BENDING, this);
+		Light = new Element("Light", ElementType.BENDING, this);
 		
 		
 		FileConfiguration config = getConfig();
 		config.options().copyDefaults(true);
-		ConfigManager.languageConfig.get().addDefault("Chat.Colors.Light", "YELLOW");
+		ConfigManager.languageConfig.get().addDefault("Chat.Colors.Light", "WHITE");
 		ConfigManager.languageConfig.get().addDefault("Chat.Prefixes.Light", "[Light]");
 		ConfigManager.languageConfig.save();
 		saveConfig();
 		
 		ProjectKorra.plugin.getServer().getPluginManager().registerEvents(new LightListener(), ProjectKorra.plugin);
-		CoreAbility.registerPluginAbilities(this, "com.Swan.Korra.ProjectKorraLight");
+		ProjectKorra.plugin.getServer().getPluginManager().registerEvents(new LightBlastListener(), ProjectKorra.plugin);
+		CoreAbility.registerPluginAbilities(this, "com.Swan.Korra.PKLight");
 		
 
 	}
