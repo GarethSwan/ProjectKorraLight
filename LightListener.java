@@ -11,7 +11,11 @@ public class LightListener implements Listener{
 		if (event.isCancelled()) {
 			return;
 		}
-		new Light(event.getPlayer());
+		
+		BendingPlayer bPlayer = BendingPlayer.getBendingPlayer(event.getPlayer());
+		if (bPlayer.canBend(CoreAbility.getAbility("Light"))) {
+		    new Light(event.getPlayer());	
+		}
 	}
 
 }
