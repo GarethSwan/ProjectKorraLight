@@ -34,6 +34,9 @@ public class Main extends JavaPlugin{
 		
 
 	}
+		public void onDisable() {
+			ProjectKorra.log.info("ProjectKorraLight by Gareth Swan has been disabled");
+		}
 	
 	
 	

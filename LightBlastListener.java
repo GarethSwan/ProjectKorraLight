@@ -19,7 +19,7 @@ public class LightBlastListener implements Listener{
 		}
 		
 		BendingPlayer bPlayer = BendingPlayer.getBendingPlayer(event.getPlayer());
-		if (bPlayer.canBend(CoreAbility.getAbility("Light"))) {
+		if (bPlayer.canBend(CoreAbility.getAbility("LightBlast"))) {
 		    new LightBlast(event.getPlayer());	
 		}
 	}
