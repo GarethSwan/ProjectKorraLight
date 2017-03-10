@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerAnimationEvent;
 import com.projectkorra.projectkorra.BendingPlayer;
 import com.projectkorra.projectkorra.ability.CoreAbility;
 
-public class LightListener implements Listener{
+public class TestBeamListener implements Listener{
 	
 	@EventHandler
 	public void onSwing(PlayerAnimationEvent event) {
@@ -19,8 +19,8 @@ public class LightListener implements Listener{
 		}
 		
 		BendingPlayer bPlayer = BendingPlayer.getBendingPlayer(event.getPlayer());
-		if (bPlayer.canBend(CoreAbility.getAbility("Light"))) {
-		    new Light(event.getPlayer());	
+		if (bPlayer.canBend(CoreAbility.getAbility("TestBeam"))) {
+		    new TestBeam(event.getPlayer());	
 		}
 	}
 

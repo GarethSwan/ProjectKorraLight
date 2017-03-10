@@ -1,3 +1,6 @@
+// ProjectKorra Light is an addition to add new abilities and a new Element to the game! I do not claim ownership of ProjectKorra Core or any other parts
+// ProjectKorra Light was created by Gareth_Swan
+
 package com.Swan.Korra.PKLight;
 
 import org.bukkit.Location;
@@ -18,7 +21,8 @@ public class Light extends LightAbility{
 	}
 
 	public long getCooldown() {
-		return 100 * 1000; //The cooldown is in milliseconds. So this changes it to 100 seconds instead of 0.1 seconds.
+		// TODO Auto-generated method stub
+		return 100 * 1000;
 	}
 
 	public Location getLocation() {
@@ -29,6 +33,14 @@ public class Light extends LightAbility{
 	public String getName() {
 		// TODO Auto-generated method stub
 		return "Light";
+	}
+	
+	public String getDescription() {
+		return "An ability granting the Lightbender temporary Nightvision!";
+	}
+	
+	public String getInstructions() {
+		return "Left click";
 	}
 
 	public boolean isExplosiveAbility() {

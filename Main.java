@@ -30,6 +30,7 @@ public class Main extends JavaPlugin{
 		
 		ProjectKorra.plugin.getServer().getPluginManager().registerEvents(new LightListener(), ProjectKorra.plugin);
 		ProjectKorra.plugin.getServer().getPluginManager().registerEvents(new LightBlastListener(), ProjectKorra.plugin);
+		ProjectKorra.plugin.getServer().getPluginManager().registerEvents(new TestBeamListener(), ProjectKorra.plugin);
 		CoreAbility.registerPluginAbilities(this, "com.Swan.Korra.PKLight");
 		
 

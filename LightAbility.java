@@ -1,11 +1,12 @@
+// ProjectKorra Light is an addition to add new abilities and a new Element to the game! I do not claim ownership of ProjectKorra Core or any other parts
+// ProjectKorra Light was created by Gareth_Swan
+
 package com.Swan.Korra.PKLight;
 
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import com.projectkorra.projectkorra.Element;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
-import com.projectkorra.projectkorra.configuration.ConfigManager;
 
 
 public abstract class LightAbility extends ElementalAbility{
@@ -20,10 +21,5 @@ public abstract class LightAbility extends ElementalAbility{
 		return Main.Light;
 	
 	}
-	
-	public ChatColor getColor() {
-	    return ChatColor.valueOf(ConfigManager.languageConfig.get().getString("Chat.Colors.Light"));
-	    
-	}    
 	
 }

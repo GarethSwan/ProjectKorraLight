@@ -13,7 +13,7 @@ import com.projectkorra.projectkorra.ProjectKorra;
 import com.projectkorra.projectkorra.configuration.ConfigManager;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
-public class LightBlast extends LightAbility {
+public class TestBeam extends LightAbility {
 	
 	private double moveSpeed = 0.7;
 	private double collisionRadius = 1.2;
@@ -31,7 +31,7 @@ public class LightBlast extends LightAbility {
 
 		
 	}
-	public LightBlast(Player player) {
+	public TestBeam(Player player) {
 		super(player);
 		if (!bPlayer.canBend(this)) {
 			return;
@@ -57,7 +57,7 @@ public class LightBlast extends LightAbility {
 
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "LightBlast";
+		return "TestBeam";
 	}
 
 	public boolean isHarmlessAbility() {
@@ -86,21 +86,13 @@ public class LightBlast extends LightAbility {
 		}
 		
 		location.add(this.location.getDirection().clone().normalize().multiply(moveSpeed));
+	
+		for (int i = 0; i < 20; i++) {
+			GeneralMethods.displayColoredParticle(location, "000000");
+			GeneralMethods.displayColoredParticle(location, "8B0000");
 
-		GeneralMethods.displayColoredParticle(location, "ffffff");
-		GeneralMethods.displayColoredParticle(location, "ffffff", 0.1F, 0.1F, 0.1F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", 0.1F, 0.1F, 0.1F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", -0.1F, -0.1F, -0.1F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", -0.1F, -0.1F, -0.1F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", 0.2F, 0.2F, 0.2F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", 0.2F, 0.2F, 0.2F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", -0.2F, -0.2F, -0.2F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", -0.2F, -0.2F, -0.2F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", 0.3F, 0.3F, 0.3F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", 0.3F, 0.3F, 0.3F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", -0.3F, -0.3F, -0.3F);
-		GeneralMethods.displayColoredParticle(location, "ffffff", -0.3F, -0.3F, -0.3F);
-		
+			}
+	
 		for (Entity entity : GeneralMethods.getEntitiesAroundPoint(location,
 				collisionRadius)) {
 			if (entity instanceof Entity) {
@@ -127,7 +119,7 @@ public class LightBlast extends LightAbility {
 	}
 
 	public void load() {
-		ProjectKorra.plugin.getServer().getPluginManager().registerEvents(new LightBlastListener(), ProjectKorra.plugin);
+		ProjectKorra.plugin.getServer().getPluginManager().registerEvents(new TestBeamListener(), ProjectKorra.plugin);
 		ConfigManager.getConfig().addDefault("Abilities.Light.LightBlast.Damage", 8);
 		ConfigManager.getConfig().addDefault("Abilities.Light.LightBlast.Cooldown", 2000);
 		ConfigManager.defaultConfig.save();
